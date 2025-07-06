@@ -1,0 +1,253 @@
+   body {
+       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+       min-height: 100vh;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       padding: 20px 0;
+   }
+
+   .page-header {
+       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+       color: white;
+       padding: 30px 0;
+       margin-bottom: 30px;
+       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   }
+
+   .page-title {
+       font-size: 2.5rem;
+       font-weight: 300;
+       margin: 0;
+   }
+
+   .page-subtitle {
+       font-size: 1.1rem;
+       opacity: 0.9;
+       margin: 5px 0 0 0;
+   }
+
+   .btn-add {
+       background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+       border: none;
+       border-radius: 12px;
+       padding: 12px 25px;
+       font-size: 16px;
+       font-weight: 600;
+       color: white;
+       transition: all 0.3s ease;
+       box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+   }
+
+   .btn-add:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+       color: white;
+   }
+
+   .employee-card {
+       background: white;
+       border: none;
+       border-radius: 15px;
+       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+       transition: all 0.3s ease;
+       margin-bottom: 25px;
+       overflow: hidden;
+   }
+
+   .employee-card:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+   }
+
+   .card-header-custom {
+       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+       color: white;
+       padding: 20px;
+       border: none;
+       position: relative;
+   }
+
+   .card-header-custom::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+   }
+
+   .employee-name {
+       font-size: 1.4rem;
+       font-weight: 600;
+       margin: 0;
+       position: relative;
+       z-index: 1;
+   }
+
+   .employee-id {
+       font-size: 0.9rem;
+       opacity: 0.9;
+       margin: 5px 0 0 0;
+       position: relative;
+       z-index: 1;
+   }
+
+   .card-body-custom {
+       padding: 25px;
+   }
+
+   .employee-info {
+       margin-bottom: 15px;
+   }
+
+   .info-label {
+       font-weight: 600;
+       color: #495057;
+       font-size: 0.9rem;
+       margin-bottom: 5px;
+       display: block;
+   }
+
+   .info-value {
+       color: #6c757d;
+       font-size: 1rem;
+       margin-bottom: 0;
+   }
+
+   .role-badge {
+       display: inline-block;
+       padding: 6px 12px;
+       border-radius: 20px;
+       font-size: 0.85rem;
+       font-weight: 600;
+       text-transform: uppercase;
+       letter-spacing: 0.5px;
+   }
+
+   .role-manager {
+       background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+       color: white;
+   }
+
+   .role-developer {
+       background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+       color: white;
+   }
+
+   .role-designer {
+       background: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
+       color: white;
+   }
+
+   .role-analyst {
+       background: linear-gradient(135deg, #3742fa 0%, #2f3542 100%);
+       color: white;
+   }
+
+   .role-default {
+       background: linear-gradient(135deg, #57606f 0%, #2f3542 100%);
+       color: white;
+   }
+
+   .card-actions {
+       padding: 20px 25px;
+       background: #f8f9fa;
+       border-top: 1px solid #e9ecef;
+       display: flex;
+       gap: 10px;
+       justify-content: flex-end;
+   }
+
+   .btn-edit {
+       background: linear-gradient(135deg, #ffa502 0%, #ff6348 100%);
+       border: none;
+       border-radius: 8px;
+       padding: 8px 16px;
+       color: white;
+       font-size: 14px;
+       font-weight: 500;
+       transition: all 0.3s ease;
+       flex: 1;
+       max-width: 80px;
+   }
+
+   .btn-edit:hover {
+       transform: translateY(-1px);
+       box-shadow: 0 4px 15px rgba(255, 165, 2, 0.4);
+       color: white;
+   }
+
+   .btn-delete {
+       background: linear-gradient(135deg, #ff3838 0%, #ff4757 100%);
+       border: none;
+       border-radius: 8px;
+       padding: 8px 16px;
+       color: white;
+       font-size: 14px;
+       font-weight: 500;
+       transition: all 0.3s ease;
+       flex: 1;
+       max-width: 80px;
+   }
+
+   .btn-delete:hover {
+       transform: translateY(-1px);
+       box-shadow: 0 4px 15px rgba(255, 56, 56, 0.4);
+       color: white;
+   }
+
+   .stats-card {
+       background: white;
+       border: none;
+       border-radius: 15px;
+       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+       padding: 25px;
+       margin-bottom: 30px;
+       text-align: center;
+   }
+
+   .stats-number {
+       font-size: 2.5rem;
+       font-weight: 700;
+       color: #667eea;
+       margin: 0;
+   }
+
+   .stats-label {
+       color: #6c757d;
+       font-size: 1.1rem;
+       margin: 5px 0 0 0;
+   }
+
+   @media (max-width: 768px) {
+       .page-title {
+           font-size: 2rem;
+       }
+
+       .card-actions {
+           flex-direction: column;
+       }
+
+       .btn-edit,
+       .btn-delete {
+           max-width: none;
+       }
+   }
+
+   @media (max-width: 576px) {
+       .page-header {
+           padding: 20px 0;
+       }
+
+       .page-title {
+           font-size: 1.8rem;
+       }
+
+       .employee-card {
+           margin-bottom: 20px;
+       }
+
+       .card-body-custom {
+           padding: 20px;
+       }
+   }

@@ -1,0 +1,249 @@
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12">
+                <h1 class="page-title text-center">
+                    <i class="fa fa-user-plus"></i> Add New Employee
+                </h1>
+                <p class="page-subtitle text-center">Fill in the employee details below</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="form-container">
+        <form >
+            <!-- Basic Information Section -->
+            <div class="row-section">
+                <h3 class="section-title">
+                    <i class="fa fa-user"></i> Basic Information
+                </h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-user input-icon"></i>
+                            <input type="text" class="form-control"  name="empName" [(ngModel)]="employeeObj.empName"id="empName" placeholder="Employee Name" required>
+                            <label for="empName">Employee Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-id-badge input-icon"></i>
+                            <input type="text" class="form-control"  name="userName" [(ngModel)]="employeeObj.userName" id="userName" placeholder="Username" required>
+                            <label for="userName">Username</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-code input-icon"></i>
+                            <input type="text" class="form-control"  name="empCode" [(ngModel)]="employeeObj.empCode" id="empCode" placeholder="Employee Code" required>
+                            <label for="empCode">Employee Code</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-lock input-icon"></i>
+                            <input type="password" class="form-control"  name="password" [(ngModel)]="employeeObj.password"id="password" placeholder="Password" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-star input-icon"></i>
+                            <select class="form-select" id="roleId" required name="roleId" [(ngModel)]="employeeObj.roleId" >
+                                <option value="">Select Role</option>
+                                @for (item of roleList$|async; track $index) {
+                                     <option [value]="item.roleId">{{item.role}}</option>
+                                }
+                               
+                            </select>
+                            <label for="roleId">Role</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-briefcase input-icon"></i>
+                            <select class="form-select" id="empDesignationId" name="empDesignationId" [(ngModel)]="employeeObj.empDesignationId" required>
+                                <option value="">Select Designation</option>
+                                @for (item of deginationList$ |async; track $index) {
+
+                                    <option [value]="item.designationId">{{item.designation}}</option>
+                                }
+                                
+                            </select>
+                            <label for="empDesignationId">Designation</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="row-section">
+                <h3 class="section-title">
+                    <i class="fa fa-phone"></i> Contact Information
+                </h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-envelope input-icon"></i>
+                            <input type="email" class="form-control"  name="empEmailId" [(ngModel)]="employeeObj.empEmailId"id="empEmailId" placeholder="Official Email"
+                                required>
+                            <label for="empEmailId">Official Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-envelope-o input-icon"></i>
+                            <input type="email" class="form-control"  name="empPersonalEmailId" [(ngModel)]="employeeObj.empPersonalEmailId" id="empPersonalEmailId"
+                                placeholder="Personal Email">
+                            <label for="empPersonalEmailId">Personal Email</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-phone input-icon"></i>
+                            <input type="tel" class="form-control"  name="empContactNo" [(ngModel)]="employeeObj.empContactNo" id="empContactNo" placeholder="Primary Contact"
+                                required>
+                            <label for="empContactNo">Primary Contact Number</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-phone-square input-icon"></i>
+                            <input type="tel" class="form-control"  name="empAltContactNo" [(ngModel)]="employeeObj.empAltContactNo" id="empAltContactNo" placeholder="Alternate Contact">
+                            <label for="empAltContactNo">Alternate Contact Number</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Information Section -->
+            <div class="row-section">
+                <h3 class="section-title">
+                    <i class="fa fa-calendar"></i> Experience Information
+                </h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-calendar-o input-icon"></i>
+                            <input type="number" class="form-control"  name="empExpTotalYear" [(ngModel)]="employeeObj.empExpTotalYear" id="empExpTotalYear" placeholder="Years" min="0"
+                                max="50">
+                            <label for="empExpTotalYear">Total Experience (Years)</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <i class="fa fa-calendar-check-o input-icon"></i>
+                            <input type="number" class="form-control"  name="empExpTotalMonth" [(ngModel)]="employeeObj.empExpTotalMonth" id="empExpTotalMonth" placeholder="Months" min="0"
+                                max="11">
+                            <label for="empExpTotalMonth">Additional Months</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Address Section -->
+            <div class="row-section">
+                <h3 class="section-title">
+                    <i class="fa fa-map-marker"></i> Current Address
+                </h3>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <i class="fa fa-home input-icon"></i>
+                            <textarea class="form-control"  name="empAddress" [(ngModel)]="employeeObj.empAddress" id="empAddress" placeholder="Current Address"
+                                required></textarea>
+                            <label for="empAddress">Current Address</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <i class="fa fa-building input-icon"></i>
+                            <input type="text" class="form-control"  name="empCity" [(ngModel)]="employeeObj.empCity" id="empCity" placeholder="City" required>
+                            <label for="empCity">City</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <i class="fa fa-map input-icon"></i>
+                            <input type="text" class="form-control"  name="empState" [(ngModel)]="employeeObj.empState" id="empState" placeholder="State" required>
+                            <label for="empState">State</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <i class="fa fa-location-arrow input-icon"></i>
+                            <input type="text" class="form-control"  name="empPinCode" [(ngModel)]="employeeObj.empPinCode" id="empPinCode" placeholder="Pin Code" required>
+                            <label for="empPinCode">Pin Code</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Permanent Address Section -->
+            <div class="row-section">
+                <h3 class="section-title">
+                    <i class="fa fa-map-pin"></i> Permanent Address
+                </h3>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <i class="fa fa-home input-icon"></i>
+                            <textarea class="form-control"  name="empPerAddress" [(ngModel)]="employeeObj.empPerAddress" id="empPerAddress"
+                                placeholder="Permanent Address"></textarea>
+                            <label for="empPerAddress">Permanent Address</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <i class="fa fa-building input-icon"></i>
+                            <input type="text" class="form-control"  name="empPerCity" [(ngModel)]="employeeObj.empPerCity" id="empPerCity" placeholder="City">
+                            <label for="empPerCity">City</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <i class="fa fa-map input-icon"></i>
+                            <input type="text" class="form-control"  name="empPerState" [(ngModel)]="employeeObj.empPerState" id="empPerState" placeholder="State">
+                            <label for="empPerState">State</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <i class="fa fa-location-arrow input-icon"></i>
+                            <input type="text" class="form-control"  name="empPerPinCode" [(ngModel)]="employeeObj.empPerPinCode" id="empPerPinCode" placeholder="Pin Code">
+                            <label for="empPerPinCode">Pin Code</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+                <button type="button" class="btn btn-save" (click)="onSave()">
+                    <i class="fa fa-save"></i> Save
+                </button>
+                <button type="reset" class="btn btn-reset">
+                    <i class="fa fa-refresh"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

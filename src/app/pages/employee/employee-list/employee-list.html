@@ -1,0 +1,101 @@
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="page-title">
+                    <i class="fa fa-users"></i> Employee Management
+                </h1>
+                <p class="page-subtitle">Manage your team members and their information</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <button class="btn btn-add" routerLink="/employee-form">
+                    <i class="fa fa-plus"></i> Add Employee
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Statistics -->
+    <div class="row mb-4">
+        <div class="col-md-3 col-sm-6">
+            <div class="stats-card">
+                <h3 class="stats-number">12</h3>
+                <p class="stats-label">Total Employees</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="stats-card">
+                <h3 class="stats-number">4</h3>
+                <p class="stats-label">Managers</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="stats-card">
+                <h3 class="stats-number">6</h3>
+                <p class="stats-label">Developers</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="stats-card">
+                <h3 class="stats-number">2</h3>
+                <p class="stats-label">Designers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Employee Cards -->
+    <div class="row">
+        <!-- Employee 1 -->
+        @for (item of employeeList; track $index) {
+        <div class="col-lg-3 col-md-6">
+            <div class="card employee-card">
+                <div class="card-header-custom">
+                    <h5 class="employee-name">
+                        <i class="fa fa-user"></i> {{item.empName}}
+                    </h5>
+                    <p class="employee-id">ID: {{item.empId}}</p>
+                </div>
+                <div class="card-body-custom">
+                    <div class="employee-info">
+                        <span class="info-label">
+                            <i class="fa fa-code"></i> Employee Code
+                        </span>
+                        <p class="info-value">{{item.empCode}}</p>
+                    </div>
+                    <div class="employee-info">
+                        <span class="info-label">
+                            <i class="fa fa-envelope"></i> Email
+                        </span>
+                        <p class="info-value">{{item.empEmailId}}</p>
+                    </div>
+                    <div class="employee-info">
+                        <span class="info-label">
+                            <i class="fa fa-briefcase"></i> Designation
+                        </span>
+                        <p class="info-value">{{item.empDesignation}}</p>
+                    </div>
+                    <div class="employee-info">
+                        <span class="info-label">
+                            <i class="fa fa-star"></i> Role
+                        </span>
+                        <span class="role-badge role-manager">{{item.role}}</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-edit" [routerLink]="'/employee-form/'+item.empId">
+                        <i class="fa fa-edit"></i> Edit
+                    </button>
+                    <button class="btn btn-delete">
+                        <i class="fa fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+
+
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="login-container">
+    <div class="card login-card">
+        <div class="login-header">
+            <i class="fa fa-lock login-icon"></i>
+            <h1 class="login-title">Welcome Back</h1>
+        </div>
+
+        <div class="card-body login-body">
+            <form>
+                <div class="form-floating">
+                    <i class="fa fa-user input-icon"></i>
+                    <input type="email" class="form-control" [(ngModel)]="loginFormObj.userName" name="userName" id="floatingEmail" placeholder="name@example.com" required>
+                    <label for="floatingEmail">Email address</label>
+                </div>
+
+                <div class="form-floating">
+                    <i class="fa fa-lock input-icon"></i>
+                    <input type="password" class="form-control" [(ngModel)]="loginFormObj.password" name="password" id="floatingPassword" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">
+                        Remember me
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-login" (click)="onLogin()">
+                    <i class="fa fa-sign-in"></i> Login
+                </button>
+            </form>
+
+            <div class="login-links">
+                <a href="#"><i class="fa fa-question-circle"></i> Forgot your password?</a>
+            </div>
+
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+
+            <div class="social-login">
+                <a href="#" class="btn-social facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#" class="btn-social google">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a href="#" class="btn-social twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+
+            <div class="login-links">
+                <p class="mb-0">Don't have an account? <a href="#"><i class="fa fa-user-plus"></i> Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
