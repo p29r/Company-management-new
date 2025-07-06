@@ -23,8 +23,11 @@ export class Login {
     this.userService.login(this.loginFormObj).subscribe({
       next: (res: any) => {
         debugger;
+        const data = res.data.data;
+        const strData = JSON.stringify(data);
 
-        this.router.navigateByUrl('/employee-list')
+        localStorage.setItem('clientStriveUserNew', strData);
+        this.router.navigateByUrl('/employee-list');
       },
       error: () => {
         debugger;
