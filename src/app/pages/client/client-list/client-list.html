@@ -1,1 +1,109 @@
-<p>client-list works!</p>
+<div class="container">
+    <div class="header">
+        <h1>Client Management System</h1>
+        <!-- <p>Manage your clients efficiently with our modern interface</p> -->
+    </div>
+
+    <div class="main-content">
+        <div class="client-list-section">
+            <!-- <h2 class="section-title">Client Directory</h2> -->
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">147</div>
+                    <div class="stat-label">Total Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">23</div>
+                    <div class="stat-label">Active Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+
+            <div class="client-grid">
+                @for (item of clientList; track $index) {
+                <!-- <div class="col-lg-4 col-md-6"> -->
+                    <div class="card employee-card">
+                        <div class="card-body">
+                            <div class="employee-avatar">
+                                {{item.companyName| shortName}}
+                            </div>
+                            <h5 class="employee-name">{{item.companyName}}</h5>
+                            <p class="employee-designation">{{item.regNo}}</p>
+
+                            <div class="employee-details">
+                                <div class="detail-row">
+                                    <div class="detail-icon">
+                                        <i class="fa fa-id-badge" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="detail-content">
+                                        <div class="detail-label">Client ID</div>
+                                        <div class="detail-value">{{item.clientId}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <div class="detail-icon">
+                                        <i class="fa fa-code" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="detail-content">
+                                        <div class="detail-label">Client Contact Person Name</div>
+                                        <div class="detail-value">{{item.contactPersonName}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <div class="detail-icon">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="detail-content">
+                                        <div class="detail-label">Contact Person Number</div>
+                                        <div class="detail-value">{{item.contactNo}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <div class="detail-icon">
+                                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="detail-content">
+                                        <div class="detail-label">GST NO</div>
+                                        <div class="detail-value">{{item.gstNo}}</div>
+                                    </div>
+                                </div>
+                                 <div class="detail-row">
+                                    <div class="detail-icon">
+                                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="detail-content">
+                                        <div class="detail-label">Address</div>
+                                        <div class="detail-value">{{item.address}}</div>
+                                        <div class="detail-value">{{item.city}}</div>
+                                        <div class="detail-value">{{item.state}}</div>
+                                        <div class="detail-value">{{item.pincode}}</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="action-buttons">
+                                <a class="btn-action btn-edit" [routerLink]="'/client-form/' + item.clientId">
+                                    <i class="fa fa-edit" aria-hidden="true"></i>
+                                    Edit
+                                </a>
+                                <a class="btn-action btn-delete" (click)="onDelete(item.clientId)">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                    Delete
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+                }
+            </div>
+        </div>
+    </div>
+</div>

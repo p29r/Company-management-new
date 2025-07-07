@@ -23,7 +23,7 @@ export class EmployeeService {
   }
 
   deleteEmployee(empId: number) {
-    return this.http.put(environment.API_URL + Constant.API_METHODS.EMPLOYEE.DELETE_EMPLOYEE, empId);
+    return this.http.delete(environment.API_URL + Constant.API_METHODS.EMPLOYEE.DELETE_EMPLOYEE + empId);
   }
 
   getEmployeeByEmpId(empId: number) {

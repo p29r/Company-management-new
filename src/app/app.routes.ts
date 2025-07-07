@@ -33,7 +33,7 @@ export const routes: Routes = [
                 component: ClientList
             },
             {
-                path: "client-form",
+                path: "client-form/:id",
                 component: ClientForm
             }
         ]

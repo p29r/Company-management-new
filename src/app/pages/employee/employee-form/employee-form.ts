@@ -1,11 +1,11 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { MasterService } from '../../../core/services/master-service';
-import { Employee } from '../../../core/models/class/employee.model';
 import { FormsModule } from '@angular/forms';
-import { EmployeeService } from '../../../core/services/employee-service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Employee } from '../../../core/models/class/employee.model';
+import { EmployeeService } from '../../../core/services/employee-service';
+import { MasterService } from '../../../core/services/master-service';
 
 @Component({
   selector: 'app-employee-form',
@@ -16,6 +16,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EmployeeForm implements OnInit {
   employeeObj: Employee = new Employee();
   currentEmpId: number = 0;
+  title :string ='Create New Employee';
 
   //    roleList: any;
   roleList$: Observable<any> = new Observable<any>();
@@ -30,8 +31,12 @@ export class EmployeeForm implements OnInit {
   constructor() {
     this.activatedRoute.params.subscribe({
       next: (params: any) => {
+        debugger;
         this.currentEmpId = params.id;
-        this.getEmpyeeByID(this.currentEmpId);
+        if(params?.id != 0){
+          this.getEmpyeeByID(this.currentEmpId);
+           this.title = 'Update Employee';
+        }
       }
     })
   }
@@ -54,6 +59,17 @@ export class EmployeeForm implements OnInit {
       next: (res: any) => {
         //alter employee created sucessfully
         alert("Success!  employee created Sucessfully...!");
+        this.router.navigateByUrl('/employee-list');
+      }, error: (err: any) => { }
+    })
+  }
+
+  onUpdate(){
+    debugger;
+    this.emplyoeeService.updateEmployee(this.employeeObj).subscribe({
+      next: (res: any) => {
+        //alter employee created sucessfully
+        alert("Success!  employee Updated Sucessfully...!");
         this.router.navigateByUrl('/employee-list');
       }, error: (err: any) => { }
     })

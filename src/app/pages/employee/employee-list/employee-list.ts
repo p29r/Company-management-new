@@ -25,12 +25,24 @@ export class EmployeeList implements OnInit {
   getAllEmployeeList() {
     this.employeeService.getAllEmployee().subscribe({
       next: (res: any) => {
-        debugger;
+        //debugger;
         this.employeeList = res.data;
 
       },
       error: () => {
         debugger;
+      }
+    })
+  }
+
+  onDelete(id:number){
+    debugger;
+    this.employeeService.deleteEmployee(id).subscribe({
+      next:(res:any)=>{
+        alert(`Suucess! emplyee -${id} deleted success full`);
+        this.getAllEmployeeList();
+      },
+      error:(err:any)=>{
       }
     })
   }
