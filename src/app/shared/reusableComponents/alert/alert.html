@@ -1,0 +1,7 @@
+<div class="alert-container alert-dismissible" [class.show]="showAlert">
+
+    <div class="alert alert-success " [ngClass]="alertClassName">
+        <strong>{{alertTitle}}!</strong> {{alertMessage}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="hide()"></button>
+    </div>
+</div>
