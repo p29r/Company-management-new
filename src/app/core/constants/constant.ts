@@ -16,6 +16,9 @@ export const Constant = {
             DELETE_EMPLOYEE: 'DeleteEmployeeByEmpId?empId=',
             //GET_EMPLOYEE_BY_ID: 'GetEmployeeByEmployeeId'
         },
+        PROJECT: {
+            GET_ALL_PROJECT: 'GetAllClientProjects'
+        },
         MASTER: {
             GET_ALL_ROLES: 'GetAllRoles',
             GET_ALL_DESIGNATIONS: 'GetAllDesignation'
