@@ -1,8 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { ShortNamePipe } from '../../../shared/pipe/short-name-pipe';
 import { RouterLink } from '@angular/router';
 import { ClientService } from '../../../core/services/client-service';
 import { IClientModel } from '../../../core/models/interfaces/clientModel.model';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-client-list',
@@ -10,14 +11,24 @@ import { IClientModel } from '../../../core/models/interfaces/clientModel.model'
   templateUrl: './client-list.html',
   styleUrl: './client-list.css'
 })
-export class ClientList implements OnInit {
+export class ClientList implements OnInit, AfterViewInit {
 
   clientList: IClientModel[] = [];
+  //private modalInstance: bootstrap.Modal | undefined;
+  @ViewChild("newModal") modalInstance!:  ElementRef;
+  title:string ='Add Client';
+  //
+  @ViewChild('clientForm') clientForm!: ElementRef;
+
   //services
   clientService = inject(ClientService);
 
   ngOnInit(): void {
     this.getAllClientList();
+  }
+
+  ngAfterViewInit() {
+    //this.modalInstance = new bootstrap.Modal(this.clientForm.nativeElement);
   }
 
   getAllClientList() {
@@ -27,6 +38,14 @@ export class ClientList implements OnInit {
         this.clientList = res.data
       }
     })
+  }
+
+  openModalPopUp() {
+     debugger;
+    if(this.modalInstance) {
+      this.modalInstance.nativeElement.style.display = 'block'
+    }
+
   }
   onDelete(id: number) { }
 }
