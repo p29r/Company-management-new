@@ -5,6 +5,8 @@ import { Login } from './pages/login/login';
 import { EmployeeForm } from './pages/employee/employee-form/employee-form';
 import { ClientList } from './pages/client/client-list/client-list';
 import { ClientForm } from './pages/client/client-form/client-form';
+import { ClientProject } from './pages/client-project/client-project';
+import { ProjectDetail } from './pages/project-detail/project-detail';
 
 export const routes: Routes = [
     {
@@ -35,6 +37,13 @@ export const routes: Routes = [
             {
                 path: "client-form/:id",
                 component: ClientForm
+            },
+            {
+                path: 'project',
+                component: ClientProject
+            },{
+                path:'projectdetail/:projectid',
+                component: ProjectDetail
             }
         ]
     }

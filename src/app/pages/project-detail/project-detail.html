@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <app-tabs [tabList]="projectTabs" (onTabChange)="onTabSelect($event)"></app-tabs>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        @if (currentTabName == 'Project Details') {
+            <app-project-form [projectId]="currentProjectId"></app-project-form>
+        } @else if (currentTabName == 'Employees') {
+            <app-project-empolyees [projectId]="currentProjectId"></app-project-empolyees>
+        } @else if (currentTabName == 'Meeting') {
+            <app-project-meetings [projectId]="currentProjectId"></app-project-meetings>
+        } @else if (currentTabName == 'Change') {
+            <app-project-change [projectId]="currentProjectId"></app-project-change>
+        } @else if (currentTabName == 'Payment') {
+            <app-project-payment [projectId]="currentProjectId"></app-project-payment>
+        }
+    </div>
+</div>
