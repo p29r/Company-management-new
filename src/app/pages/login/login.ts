@@ -27,6 +27,8 @@ export class Login {
         const strData = JSON.stringify(data);
 
         localStorage.setItem('clientStriveUserNew', strData);
+        localStorage.setItem('JWTToken', res.data.token);
+
         this.router.navigateByUrl('/employee-list');
       },
       error: () => {

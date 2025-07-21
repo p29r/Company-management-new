@@ -3,10 +3,10 @@ export const Constant = {
         LOGIN: 'login',
         CLIENT: {
             GET_ALL_CLIENT: 'GetAllClients',
-            CREATE_CLIENT: 'CreateNewClient',
-            GET_CLIENT_BY_ID: 'GetCLIENTByCLIENTId?id=',
-            UPDATE_CLIENT: 'UpdateCLIENT',
-            DELETE_CLIENT: 'DeleteCLIENTByEmpId?empId=',
+            //CREATE_CLIENT: 'CreateNewClient',
+            GET_CLIENT_BY_ID: 'GetClientByClientId?clientId=',
+            ADD_UPDATE_CLIENT: 'AddUpdateClient',
+            DELETE_CLIENT: 'DeleteClientByClientId?clientId=',
         },
         EMPLOYEE: {
             GET_ALL_EMPLOYEE: 'GetAllEmployee',
@@ -17,7 +17,9 @@ export const Constant = {
             //GET_EMPLOYEE_BY_ID: 'GetEmployeeByEmployeeId'
         },
         PROJECT: {
-            GET_ALL_PROJECT: 'GetAllClientProjects'
+            GET_ALL_PROJECT: 'GetAllClientProjects',
+
+            //GET_PROJECT_DTETAILS_BY_ID :'getProjectDetailsById'
         },
         MASTER: {
             GET_ALL_ROLES: 'GetAllRoles',

@@ -14,12 +14,12 @@ export class ClientService {
     return this.http.get(environment.API_URL + Constant.API_METHODS.CLIENT.GET_ALL_CLIENT);
   }
 
-  createClient(clientObj: any) {
-    return this.http.post(environment.API_URL + Constant.API_METHODS.CLIENT.CREATE_CLIENT, clientObj);
-  }
+  // createClient(clientObj: any) {
+  //   return this.http.post(environment.API_URL + Constant.API_METHODS.CLIENT.CREATE_CLIENT, clientObj);
+  // }
 
-  updateClient(clientObj: any) {
-    return this.http.put(environment.API_URL + Constant.API_METHODS.CLIENT.UPDATE_CLIENT, clientObj);
+  addUpdateClient(clientObj: any) {
+    return this.http.put(environment.API_URL + Constant.API_METHODS.CLIENT.ADD_UPDATE_CLIENT, clientObj);
   }
 
   deleteClient(clientId: number) {

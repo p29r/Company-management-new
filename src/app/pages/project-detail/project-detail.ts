@@ -26,4 +26,6 @@ export class ProjectDetail {
   onTabSelect(tabName: string) {
     this.currentTabName = tabName;
   }
+
+  
 }

@@ -45,7 +45,15 @@ export class ClientList implements OnInit, AfterViewInit {
     if(this.modalInstance) {
       this.modalInstance.nativeElement.style.display = 'block'
     }
-
   }
-  onDelete(id: number) { }
+  
+  onDelete(clientId: number) {
+     this.clientService.deleteClient(clientId).subscribe({
+      next: (res: any) => {
+        debugger;
+       //this.clientList = res.data
+       this.getAllClientList();
+      }
+    })
+   }
 }

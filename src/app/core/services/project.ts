@@ -8,10 +8,14 @@ import { Constant } from '../constants/constant';
 })
 export class ProjectService {
 
- 
+
   constructor(private http: HttpClient) { }
 
-  getAllClientProject() { 
-    return this.http.get(environment.API_URL + Constant.API_METHODS.PROJECT.GET_ALL_PROJECT)
+  getAllClientProject() {
+    return this.http.get(environment.API_URL + Constant.API_METHODS.PROJECT.GET_ALL_PROJECT);
+  }
+
+  getProjectDetailsById() {
+    return this.http.get(environment.API_URL + Constant.API_METHODS.PROJECT.GET_ALL_PROJECT);
   }
 }
