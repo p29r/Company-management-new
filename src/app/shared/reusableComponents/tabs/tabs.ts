@@ -16,7 +16,7 @@ export class Tabs {
 
 
   constructor(){
-    //console.log('constructor tabList' +this.tabList)
+    console.log('constructor tabList' +this.tabList)
     //console.log('constructor coursName' +this.coursName)
   }
 

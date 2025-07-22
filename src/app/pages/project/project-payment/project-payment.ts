@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Paymentservice } from '../../../core/services/paymentservice';
 
 @Component({
   selector: 'app-project-payment',
@@ -6,6 +7,21 @@ import { Component, Input } from '@angular/core';
   templateUrl: './project-payment.html',
   styleUrl: './project-payment.css'
 })
-export class ProjectPayment {
-@Input() projectId: number = 0;
+export class ProjectPayment implements OnInit {
+  @Input() projectId: number = 0;
+  
+  constructor(private paymentservice: Paymentservice) { }
+
+  ngOnInit(): void {
+    this.getPaymentsByProjectID();
+  }
+
+  getPaymentsByProjectID() {
+    this.paymentservice.getPaymentsByProjectId(this.projectId).subscribe({
+      next: (res) => {
+        console.log("payments", res);
+
+      }
+    })
+  }
 }

@@ -30,4 +30,7 @@ export class EmployeeService {
     return this.http.get(environment.API_URL + Constant.API_METHODS.EMPLOYEE.GET_EMPLOYEE_BY_ID + empId);
   }
 
+   getEmployeeByProjectId(projectId: number) {
+    return this.http.get(environment.API_URL + Constant.API_METHODS.EMPLOYEE.GET_EMPLOYEE_BY_PROJECTID + projectId);
+  }
 }

@@ -6,16 +6,17 @@ import { ProjectChange } from '../project/project-change/project-change';
 import { ProjectPayment } from '../project/project-payment/project-payment';
 import { ProjectMeetings } from '../project/project-meetings/project-meetings';
 import { ProjectEmpolyees } from '../project/project-empolyees/project-empolyees';
+import { Project } from '../project/project';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [Tabs, ProjectForm, ProjectChange, ProjectPayment, ProjectMeetings,ProjectEmpolyees],
+  imports: [Tabs, ProjectForm, ProjectChange, ProjectPayment, ProjectMeetings,ProjectEmpolyees,Project],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.css'
 })
 export class ProjectDetail {
-  projectTabs: string[] = ['Project Details', 'Employees', 'Meeting', 'Change', 'Payment'];
-  currentTabName: string = 'Project Details';
+  projectTabs: string[] = ['View Project Details','Edit Project Details', 'Employees', 'Meeting', 'Change', 'Payment'];
+  currentTabName: string = 'Payment';
   currentProjectId: number = 0;
   constructor(private acttiavteRouet: ActivatedRoute) {
     this.acttiavteRouet.params.subscribe((res: any) => {
